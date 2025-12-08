@@ -10,5 +10,5 @@ public interface TodoService {
     TodoResponse create(TodoCreateRequest todoCreateRequest);
     List<TodoResponse> findAll();
     TodoResponse findById(Long id);
-
+    void delete(Long id);
 }
