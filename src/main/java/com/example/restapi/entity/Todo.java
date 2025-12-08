@@ -31,4 +31,9 @@ public class Todo {
         this.completed = false;
         this.createdAT = LocalDate.now();
     }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }

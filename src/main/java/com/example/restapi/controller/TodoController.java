@@ -1,6 +1,7 @@
 package com.example.restapi.controller;
 
 import com.example.restapi.dto.request.TodoCreateRequest;
+import com.example.restapi.dto.request.TodoUpdateRequest;
 import com.example.restapi.dto.response.TodoResponse;
 import com.example.restapi.service.TodoService;
 import jakarta.validation.Valid;
@@ -45,6 +46,16 @@ public class TodoController {
     ) {
         todoService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TodoResponse> update(
+            @PathVariable Long id,
+            @Valid @RequestBody TodoUpdateRequest request
+    ){
+        TodoResponse response = todoService.update(id, request);
+        return ResponseEntity.ok(response);
+
     }
 
 }
