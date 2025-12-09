@@ -15,6 +15,8 @@ public class TodoResponse {
     private boolean completed;
     private LocalDate createdAt;
 
+    private String username;
+
     public static TodoResponse from(Todo todo) {
         return TodoResponse.builder()
                 .id(todo.getId())
@@ -22,6 +24,7 @@ public class TodoResponse {
                 .content(todo.getContent())
                 .completed(todo.isCompleted())
                 .createdAt(todo.getCreatedAT())
+                .username(todo.getUser().getUsername())
                 .build();
 
     }

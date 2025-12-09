@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface TodoService {
-    TodoResponse create(TodoCreateRequest todoCreateRequest);
+    TodoResponse create(TodoCreateRequest todoCreateRequest, String username);
     List<TodoResponse> findAll();
     TodoResponse findById(Long id);
     void delete(Long id);
